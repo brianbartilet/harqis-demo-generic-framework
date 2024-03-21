@@ -3,35 +3,36 @@
 ## Introduction
 
 - This is a demo project for [HARQIS-core](https://github.com/brianbartilet/harqis-core). 
-- This can be used as a template for creating new projects and provide knowd.
+- This can be used as a template for creating new projects and provide knowledge of basic operations of fixtures and templates.
 - Please see the generated [README.md](demo/README.md) for detailed documentation of features and operations.
 
-To get started with demo, follow these steps:
-
+## Getting Started
 **Setup and Installation**:
    - Runs on Python 3.10 or greater.
    - Clone the repository
       ```sh
       git https://github.com/brianbartilet/harqis-core.git
       ```
-   - Set up and activate virtual environment
+   - Set up and activate virtual environment.
       ```sh
       python -m venv venv
       source venv/bin/activate
       ```
-   - Install the required packages using the requirements file for [HARQIS-core](https://github.com/brianbartilet/harqis-core) package
+   - Install the required packages using the requirements file for [HARQIS-core](https://github.com/brianbartilet/harqis-core) package.
       ```sh
       pip install --upgrade pip
       pip install -r requirements.txt
       ```
-- Run the demo script, this will copy files to the current directory from the `demo` directory:
+- Run all available tests.
+     ```sh
+     pytest
+     ```
+**Generate The Demo**:     
+- Run the demo script, this will copy files to the current directory from the `demo` directory.
      ```sh
      python get_started.py
      ```
-- Run all available tests:
-   ```sh
-   pytest
-   ```
+- The `demo` directory is added in the `.gitignore` file.
 ## Full Documentation
 - After successfully running `get_started.py` please see the generated [README.md](demo/README.md) for detailed documentation of features and operations.
 
