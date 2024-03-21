@@ -13,7 +13,7 @@
       ```sh
       git https://github.com/brianbartilet/harqis-core.git
       ```
-   - Set up and activate virtual environment.
+   - Set up and activate the virtual environment.
       ```sh
       python -m venv venv
       source venv/bin/activate
@@ -28,7 +28,7 @@
      pytest
      ```
 **Generate The Demo**:     
-- Run the demo script, this will copy files to the current directory from the `demo` directory.
+- Run the `get_started.py` script, this will add the `demo` directory along with templates and docs.
      ```sh
      python get_started.py
      ```
