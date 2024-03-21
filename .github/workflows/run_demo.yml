@@ -36,8 +36,8 @@ jobs:
         pwd
         ls -lah
         echo $PYTHONPATH
-        ls -lah venv
-        ls -lah venv/lib/site-packages/
+        ls -lah venv/lib
+
 
     - name: Run get_started script
       run: python get_started.py
