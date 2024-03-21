@@ -31,6 +31,13 @@ jobs:
     - name: List files
       run: ls
 
+    - name: Diagnose filesystem state
+      run: |
+        pwd
+        ls -lah
+        echo $PYTHONPATH
+        ls -lah venv/lib/site-packages/
+
     - name: Run get_started script
       run: python get_started.py
 
