@@ -19,7 +19,7 @@ RUN apk add gcc python3-dev musl-dev linux-headers
 
 # load virtual environment
 RUN python -m venv /app/venv
-ENV PATH="/venv/bin:$PATH"
+ENV PATH="/app/venv/bin:$PATH"
 
 # install packages
 RUN pip install --upgrade pip
@@ -31,7 +31,7 @@ ENV PYTHONPATH "${PYTHONPATH}:/usr/src/app"
 ENV ENV_ROOT_DIRECTORY "/usr/src/app"
 ENV ENV "TEST"
 
-CMD ["python", "get_started.py"]
+RUN python get_started.py
 CMD ["pytest"]
 
 
