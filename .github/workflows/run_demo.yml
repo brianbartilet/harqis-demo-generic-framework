@@ -32,7 +32,7 @@ jobs:
       run: ls
 
     - name: Display directory structure
-      run: tree venv/lib
+      run: tree venv
 
     - name: Diagnose filesystem state
       run: |
