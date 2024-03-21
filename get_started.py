@@ -2,6 +2,8 @@ import shutil
 import os
 import time
 
+PYTHON_VERSION = "python3.10"
+
 
 def copy_directory(source_dir, target_dir):
     """
@@ -26,9 +28,13 @@ def copy_directory(source_dir, target_dir):
 
 
 if __name__ == "__main__":
+
+    version = PYTHON_VERSION if os.getenv("ENV").lower() == "test" else ""
+
     # Specify the source and target directories
     source_directory = os.path.join(os.getcwd(), "venv",
                                                  "lib",
+                                                 f"{version}",
                                                  "site-packages",
                                                  "core",
                                                  "demo")

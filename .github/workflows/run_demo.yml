@@ -12,38 +12,11 @@ jobs:
     steps:
     - name: Set up Git repository
       uses: actions/checkout@v2
-      
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.10'
 
-    - name: Create and activate virtual environment
-      run: |
-        python -m venv venv
-        source venv/bin/activate
+    - name: Build Docker image without using cache
+      run: docker build --no-cache -t my-demo .
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-
-    - name: List files
-      run: ls
-
-    - name: Display directory structure
-      run: tree venv
-
-    - name: Diagnose filesystem state
-      run: |
-        pwd
-        ls -lah
-        echo $PYTHONPATH
-        ls -lah venv/lib
-
-    - name: Run get_started script
-      run: python get_started.py
-
-    - name: Run pytest
-      run: pytest
-
+    - name: Run tests
+      run: docker run my-demo
+      env:
+        ENV_ROOT_DIRECTORY: /app
