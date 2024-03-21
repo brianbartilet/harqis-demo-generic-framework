@@ -1,83 +1,51 @@
-# harqis-demo-testing
-```markdown
-# harqis-demo-testing
+# HARQIS Demo Generic Framework
 
-This is a demo project for HARQIS. It can be used as a template for creating new projects.
+## Introduction
 
-## Installation
+- This is a demo project for [HARQIS-core](https://github.com/brianbartilet/harqis-core). 
+- This can be used as a template for creating new projects and provide knowd.
+- Please see the generated [README.md](demo/README.md) for detailed documentation of features and operations.
 
-1. Install Python 3.10.
-2. Set up a virtual environment (venv).
-3. Activate the virtual environment.
-4. Install the required packages using the requirements file.
+To get started with demo, follow these steps:
 
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-5. Run the demo script:
-
-   ```bash
-   python get_started.py
-   ```
-
-6. Run all tests:
-```markdown
-# harqis-demo-testing
-
-This is a demo project for HARQIS. It can be used as a template for creating new projects.
-
-## Installation
-
-1. Install Python 3.10.
-2. Set up a virtual environment (venv).
-3. Activate the virtual environment.
-4. Install the required packages using the requirements file.
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-5. Run the demo script:
-
-   ```bash
-   python get_started.py
-   ```
-
-6. Run all tests:
-
-   ```bash
+**Setup and Installation**:
+   - Runs on Python 3.10 or greater.
+   - Clone the repository
+      ```sh
+      git https://github.com/brianbartilet/harqis-core.git
+      ```
+   - Set up and activate virtual environment
+      ```sh
+      python -m venv venv
+      source venv/bin/activate
+      ```
+   - Install the required packages using the requirements file for [HARQIS-core](https://github.com/brianbartilet/harqis-core) package
+      ```sh
+      pip install --upgrade pip
+      pip install -r requirements.txt
+      ```
+- Run the demo script, this will copy files to the current directory from the `demo` directory:
+     ```sh
+     python get_started.py
+     ```
+- Run all available tests:
+   ```sh
    pytest
    ```
+## Full Documentation
+- After successfully running `get_started.py` please see the generated [README.md](demo/README.md) for detailed documentation of features and operations.
 
-## Updating the package
+## Getting Updates
 
-If you need to update the `harqis-core` package, run the following commands:
-
-```bash
-pip uninstall harqis-core
-pip install -r requirements.txt
-```
-
-Make sure that you have `virtualenv` installed before setting up the virtual environment.
-```
-
-You can save this content in a file named `README.md` in the root directory of your project. This file will serve as the main documentation for your project, providing instructions on how to set up and use the project.
-
+- If you need to update the `harqis-core` package, run the following commands:
    ```bash
-   pytest
+   pip uninstall harqis-core
+   pip install -r requirements.txt
    ```
+## Contact
 
-## Updating the package
+For questions or feedback, please contact [brian.bartilet@gmail.com](mailto:brian.bartilet@gmail.com).
 
-If you need to update the `harqis-core` package, run the following commands:
+## License
 
-```bash
-pip uninstall harqis-core
-pip install -r requirements.txt
-```
-
-Make sure that you have `virtualenv` installed before setting up the virtual environment.
-```
-
-You can save this content in a file named `README.md` in the root directory of your project. This file will serve as the main documentation for your project, providing instructions on how to set up and use the project.
+**HARQIS-demo-generic-framework** is distributed under the [MIT License](LICENSE).
