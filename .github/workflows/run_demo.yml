@@ -31,13 +31,15 @@ jobs:
     - name: List files
       run: ls
 
+    - name: Display directory structure
+      run: tree venv/lib
+
     - name: Diagnose filesystem state
       run: |
         pwd
         ls -lah
         echo $PYTHONPATH
         ls -lah venv/lib
-
 
     - name: Run get_started script
       run: python get_started.py
