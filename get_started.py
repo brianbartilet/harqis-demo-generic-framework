@@ -2,7 +2,7 @@ import shutil
 import os
 import time
 
-PYTHON_VERSION = "python3.10"
+PYTHON_VERSION = "python3.12"
 
 
 def copy_directory(source_dir, target_dir):
@@ -46,9 +46,9 @@ if __name__ == "__main__":
 
     # Move the config.yml to root directory
     time.sleep(2)
-    source_file = os.path.join(os.getcwd(), "demo", "config.yaml")  # Use the correct file extension
+    source_file = os.path.join(os.getcwd(), "demo", "__tpl_config.yaml")  # Use the correct file extension
     destination_file = os.path.join(os.getcwd())
-    destination_file_check = os.path.join(os.getcwd(), "config.yaml")
+    destination_file_check = os.path.join(os.getcwd(), "__tpl_config.yaml")
     # Check if the file exists in the source
     if os.path.exists(source_file):
         # Check if the file already exists in the destination

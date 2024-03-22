@@ -8,7 +8,7 @@
 
 ## Getting Started
 **Setup and Installation**:
-   - Runs on Python 3.10 or greater.
+   - Runs on Python 3.12
    - Clone the repository
       ```sh
       git https://github.com/brianbartilet/harqis-core.git
@@ -20,19 +20,21 @@
       ```
    - Install the required packages using the requirements file for [HARQIS-core](https://github.com/brianbartilet/harqis-core) package.
       ```sh
-      pip install --upgrade pip
-      pip install -r requirements.txt
+      python -m pip install --upgrade pip
+      pip install -r requirements.txt --no-cache
       ```
-- Run all available tests.
-     ```sh
-     pytest
-     ```
+
 **Generate The Demo**:     
 - Run the `get_started.py` script, this will add the `demo` directory along with templates and docs.
      ```sh
      python get_started.py
      ```
 - The `demo` directory is added in the `.gitignore` file.
+
+- Run all available tests.
+     ```sh
+     pytest
+     ```
 ## Full Documentation
 - After successfully running `get_started.py` please see the generated [README.md](demo/README.md) for detailed documentation of features and operations.
 
@@ -41,7 +43,7 @@
 - If you need to update the `harqis-core` package, run the following commands:
    ```bash
    pip uninstall harqis-core
-   pip install -r requirements.txt
+   pip install -r requirements.txt --force-reinstall
    ```
 ## Contact
 

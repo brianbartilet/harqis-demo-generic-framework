@@ -1,5 +1,5 @@
 # set arguments for the dockerfile
-ARG PYTHON_VERSION=3.10
+ARG PYTHON_VERSION=3.12
 
 # use an official Python runtime as a parent image as interpreter
 FROM python:${PYTHON_VERSION}-alpine
@@ -22,7 +22,7 @@ RUN python -m venv /app/venv
 ENV PATH="/app/venv/bin:$PATH"
 
 # install packages
-RUN pip install --upgrade pip
+RUN python -m pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 
