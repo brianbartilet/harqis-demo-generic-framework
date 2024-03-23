@@ -21,7 +21,7 @@
    - Install the required packages using the requirements file for [HARQIS-core](https://github.com/brianbartilet/harqis-core) package.
       ```sh
       python -m pip install --upgrade pip
-      pip install -r requirements.txt --no-cache
+      pip install -r requirements.txt
       ```
 
 **Generate The Demo**:     
