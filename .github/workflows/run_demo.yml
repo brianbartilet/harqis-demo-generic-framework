@@ -10,7 +10,7 @@ on:
 
 jobs:
   run-demo-and-test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latests
     steps:
     - name: Set up Git repository
       uses: actions/checkout@v2
@@ -19,6 +19,6 @@ jobs:
       run: docker build --no-cache -t harqis-demo .
 
     - name: Run tests
-      run: docker run -v app_volume:/app/data harqis-demo
+      run: docker run -m harqis-demo
       env:
         ENV_ROOT_DIRECTORY: /app
