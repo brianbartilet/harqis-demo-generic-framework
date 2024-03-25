@@ -27,6 +27,7 @@ RUN pip install -r requirements.txt
 
 
 # run the tests
+ENV GH_TOKEN ${GH_TOKEN}
 ENV PYTHONPATH "${PYTHONPATH}:/usr/src/app"
 ENV ENV_ROOT_DIRECTORY "/usr/src/app"
 ENV ENV "TEST"
