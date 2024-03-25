@@ -10,7 +10,7 @@ on:
 
 jobs:
   run-demo-and-test:
-    runs-on: ubuntu-latests
+    runs-on: ubuntu-latest
     steps:
     - name: Set up Git repository
       uses: actions/checkout@v2
