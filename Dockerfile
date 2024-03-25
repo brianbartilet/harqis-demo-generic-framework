@@ -1,7 +1,5 @@
 # set arguments for the dockerfile
 ARG PYTHON_VERSION=3.12
-ARG ENV_ROOT_DIRECTORY="/app"
-ARG ENV="TEST"
 
 # use an official Python runtime as a parent image as interpreter
 FROM python:${PYTHON_VERSION}-alpine
@@ -30,15 +28,11 @@ RUN pip install -r requirements.txt
 
 # run the tests
 ENV GH_TOKEN ${GH_TOKEN}
-ENV ENV_ROOT_DIRECTORY ${ENV_ROOT_DIRECTORY}
-ENV ENV ${ENV}
-
 ENV PYTHONPATH "${PYTHONPATH}:/usr/src/app"
-# ENV WDM_LOCAL='1'
-ENV PATH="/usr/bin:${PATH}"
+ENV ENV_ROOT_DIRECTORY "/usr/src/app"
+ENV ENV "TEST"
 
 RUN python get_started.py
-
 CMD ["pytest"]
 
 
