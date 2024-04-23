@@ -30,25 +30,24 @@ def copy_directory(source_dir, target_dir):
 if __name__ == "__main__":
 
     version = PYTHON_VERSION if os.getenv("ENV").lower() == "test" else ""
-
+    source_base = os.path.join(os.getcwd(), "venv", "lib", f"{version}", "site-packages", "core")
     # Specify the source and target directories
-    source_directory = os.path.join(os.getcwd(), "venv",
-                                                 "lib",
-                                                 f"{version}",
-                                                 "site-packages",
-                                                 "core",
-                                                 "demo")
+    source_directory_demo = os.path.join(source_base, "demo")
+    target_directory_demo = os.path.join(os.getcwd(), "demo")
 
-    target_directory = os.path.join(os.getcwd(), "demo")
+    source_directory_docs = os.path.join(source_base, "docs")
+    target_directory_docs = os.path.join(os.getcwd(), "docs")
 
     # Call the function to copy the directory
-    copy_directory(source_directory, target_directory)
+    copy_directory(source_directory_demo, target_directory_demo)
+    copy_directory(source_directory_docs, target_directory_docs)
 
     # Move the config.yml to root directory
     time.sleep(2)
-    source_file = os.path.join(os.getcwd(), "demo", "__tpl_config.yaml")  # Use the correct file extension
+    source_file = os.path.join(os.getcwd(), "demo", "sample_config.yaml")  # Use the correct file extension
     destination_file = os.path.join(os.getcwd())
-    destination_file_check = os.path.join(os.getcwd(), "__tpl_config.yaml")
+    destination_file_check = os.path.join(os.getcwd(), "sample_config.yaml")
+
     # Check if the file exists in the source
     if os.path.exists(source_file):
         # Check if the file already exists in the destination
