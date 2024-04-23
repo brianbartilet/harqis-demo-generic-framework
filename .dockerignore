@@ -5,3 +5,4 @@
 venv
 dist
 *.log*
+pytest.ini

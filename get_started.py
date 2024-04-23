@@ -42,8 +42,15 @@ if __name__ == "__main__":
     copy_directory(source_directory_demo, target_directory_demo)
     copy_directory(source_directory_docs, target_directory_docs)
 
+    # Move pytest.ini to root directory
+    time.sleep(1)
+    source_file_ini = os.path.join(os.getcwd(), "demo", "pytest.ini")  # Use the correct file extension
+    destination_file_ini = os.path.join(os.getcwd())
+    shutil.move(source_file_ini, destination_file_ini)
+    print(f"File {source_file_ini} moved to {destination_file_ini} successfully.")
+
     # Move the config.yml to root directory
-    time.sleep(2)
+    time.sleep(1)
     source_file = os.path.join(os.getcwd(), "demo", "sample_config.yaml")  # Use the correct file extension
     destination_file = os.path.join(os.getcwd())
     destination_file_check = os.path.join(os.getcwd(), "sample_config.yaml")
@@ -59,3 +66,4 @@ if __name__ == "__main__":
             print(f"File {source_file} moved to {destination_file} successfully.")
     else:
         print(f"File {source_file} does not exist.")
+
