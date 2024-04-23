@@ -18,6 +18,9 @@ jobs:
     - name: Build Docker Image
       run: docker build --no-cache -t harqis-demo .
 
+    - name: Start Services
+      run: docker-compose up &
+
     - name: Run Tests
       run: docker run harqis-demo
       env:
