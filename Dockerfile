@@ -37,8 +37,6 @@ CMD ["pytest"]
 
 
 FROM base as behave
-COPY demo/testing/example_features_webdriver .
-VOLUME /app
 WORKDIR /app/demo/testing/example_features_webdriver
 
 CMD ["behave"]
