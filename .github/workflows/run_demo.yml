@@ -25,6 +25,7 @@ jobs:
       run: docker run harqis-demo
       env:
         ENV_ROOT_DIRECTORY: /app
+        PYTHONPATH: /app/demo/testing/example_features_webdriver
 
     - name: Run Tests Browser
       run: docker run harqis-demo behave
