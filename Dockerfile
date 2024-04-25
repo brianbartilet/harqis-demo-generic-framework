@@ -37,5 +37,6 @@ CMD ["pytest"]
 
 
 FROM base as behave
+ENV PYTHONPATH "${PYTHONPATH}:/usr/src/app/demo"
 WORKDIR /app/demo/testing/example_features_webdriver
 CMD ["behave"]
