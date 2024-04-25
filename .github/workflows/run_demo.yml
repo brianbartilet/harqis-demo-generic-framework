@@ -22,6 +22,8 @@ jobs:
       run: docker-compose up &
 
     - name: Run Tests
-      run: docker run harqis-demo
+      run: docker run harqis-demo behave
       env:
         ENV_ROOT_DIRECTORY: /app
+
+
