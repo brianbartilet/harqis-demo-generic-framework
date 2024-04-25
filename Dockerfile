@@ -2,7 +2,7 @@
 ARG PYTHON_VERSION=3.12
 
 # use an official Python runtime as a parent image as interpreter
-FROM python:${PYTHON_VERSION}-alpine
+FROM python:${PYTHON_VERSION}-alpine AS base
 RUN apk update && apk add git
 
 # create a mount point for the volume
@@ -41,11 +41,5 @@ COPY demo/testing/example_features_webdriver .
 VOLUME /app
 WORKDIR /app/demo/testing/example_features_webdriver
 
-ENV GH_TOKEN ${GH_TOKEN}
-ENV PYTHONPATH "${PYTHONPATH}:/usr/src/app"
-ENV ENV_ROOT_DIRECTORY "/usr/src/app"
-ENV ENV "TEST"
-
-RUN python get_started.py
 CMD ["behave"]
 
