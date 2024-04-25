@@ -37,7 +37,7 @@ CMD ["pytest"]
 
 
 FROM base as behave
-RUN sh ../../demo/scripts/set_env.sh
+RUN sh ../demo/scripts/set_env.sh
 WORKDIR /app/demo/testing/example_features_webdriver
 
 CMD ["behave"]
