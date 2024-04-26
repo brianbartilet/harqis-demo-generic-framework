@@ -9,27 +9,39 @@ on:
     types: [ trigger-harqis-demo-test ]
 
 jobs:
-  run-demo-and-test:
+  run-pytest:
     runs-on: ubuntu-latest
     steps:
     - name: Set Up Git Repository
       uses: actions/checkout@v2
 
     - name: Build Docker Image
-      run: docker build --no-cache -t harqis-demo .
+      run: docker build  --target tests --no-cache -t harqis-pytest .
 
     - name: Start Services
       run: docker-compose up &
 
     - name: Run Tests
-      run: docker run harqis-demo
+      run: docker run harqis-pytest
       env:
         ENV_ROOT_DIRECTORY: /app
 
-    # - name: Run Tests Browser
-    #  run: docker run harqis-demo behave
-    #  env:
-    #    ENV_ROOT_DIRECTORY: /app
+  run-behave:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Up Git Repository
+        uses: actions/checkout@v2
+
+      - name: Build Docker Image
+        run: docker build  --target behave --no-cache -t harqis-behave .
+
+      - name: Start Services
+        run: docker-compose up &
+
+      - name: Run Tests
+        run: docker run harqis-behave
+        env:
+          ENV_ROOT_DIRECTORY: /app
 
 
 

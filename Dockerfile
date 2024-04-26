@@ -28,15 +28,20 @@ RUN pip install -r requirements.txt
 
 # run the tests
 ENV GH_TOKEN ${GH_TOKEN}
-ENV PYTHONPATH "${PYTHONPATH}:/usr/src/app"
-ENV ENV_ROOT_DIRECTORY "/usr/src/app"
 ENV ENV "TEST"
 
 RUN python get_started.py
+
+
+FROM base as tests
+ENV PYTHONPATH "${PYTHONPATH}:/app"
+ENV ENV_ROOT_DIRECTORY "/app"
+WORKDIR /app
 CMD ["pytest"]
 
 
 FROM base as behave
-ENV PYTHONPATH "${PYTHONPATH}:/usr/src/app/demo"
+ENV PYTHONPATH "${PYTHONPATH}:/app:/app/demo"
+ENV ENV_ROOT_DIRECTORY "/app"
 WORKDIR /app/demo/testing/example_features_webdriver
 CMD ["behave"]
